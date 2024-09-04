@@ -95,6 +95,31 @@ console.log(cat["owner"]["name"]);
 console.log(cat["owner"]);
 cat.infodruck();
 
+// writeable
+// enumerable
+// configurable
+
+let user={
+    name: "Petro",
+    age: 23,
+    role:"admin"
+}
+
+let descriptor1=Object.getOwnPropertyDescriptors(user);
+alert(JSON.stringify(descriptor1, null,2));
+Object.defineProperty(user,'name',{
+    value:"Petro",
+    writable:false,
+    enumerable:true,
+    configurable:true
+});
+let descriptor2=Object.getOwnPropertyDescriptors(user);
+
+alert(JSON.stringify(descriptor2, null,2));
+user.name="Oleg";
+console.log(user);
+
+
 // // for (let property in cat) {  // властивості  <=> key
 // //     console.log(property);
 // //     console.log(cat[property]);
