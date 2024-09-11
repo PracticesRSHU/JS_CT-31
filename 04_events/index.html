@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        div{
+            background: teal;
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body onclick="console.log(event)">
+    <div onclick="alert('Clicked DIV!!!')">block1</div>
+    <div onclick="infoAboutBlock(event)">block2</div>
+    <div onclick="infoAboutBlock2()">block22</div>
+    <div id="blockDiv">block3</div>
+    <div onclick="console.dir(this); this.style.backgroundColor='red'">block4</div>
+    <div onclick="changeBG(this)">block5</div>
+    <div onclick="changeBG2(event)">block6</div>
+    <script>
+        function infoAboutBlock(event){
+            console.log(event);
+            let div1=event.target;
+            console.log(div1);
+            console.dir(div1);
+            console.log(div1.tagName);
+        }
+
+        function infoAboutBlock2(){
+            alert("Working block without using object EVENT!!!")
+        }
+        // blockDiv.onclick=function(){
+        //     alert('DIV clicked!!!');
+        // }
+
+        let info=()=>{
+            alert("DIV clicked!!!");
+            blockDiv.removeEventListener("click",info);
+        }
+        // blockDiv.addEventListener("click",()=>{
+        //     alert("DIV clicked!!!");
+        // },{once:true});
+
+        blockDiv.addEventListener("click",info);
+        function changeBG(element){
+            console.dir(element); 
+            element.style.backgroundColor='yellow';
+        }    
+
+        function changeBG2(event){
+            console.dir(event.target); 
+            let div6=event.target;
+            div6.style.backgroundColor='blue';
+        }  
+    </script>
+</body>
+</html>
