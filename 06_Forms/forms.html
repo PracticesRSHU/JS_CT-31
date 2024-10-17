@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+
+form>input::placeholder {
+            color: green;
+        }
+        
+        /* form>input::selection {
+            color: yellow;
+        } */
+
+        input[type="image"] {
+            width: 100px;
+            
+        }
+
+        /* select::selection{
+            color:green;
+        } */
+
+        textarea {
+            resize: vertical;
+        }
+        input[type="email"]{
+            padding-left: 25px;
+            background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+            background-size: 20px;
+        }
+        input[type="text"]:focus{
+            border:2px solid coral ;
+            background-color: lightcoral;
+        }
+        textarea:focus{
+            outline: 2px solid lightcoral ;;
+        }
+
+
+        input{
+            width: 60%;
+            /* border:none ; */
+            /* border-bottom: 2px solid blue; */
+            outline: none;
+        }
+        input:focus{
+            outline: 3px solid yellow;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- CRUD => create, read, update, delete-->
+    <!-- <form action="about.html" method="POST" name="registrationForm" onsubmit="return checkForm()"  > -->
+    <form  method="get" name="registrationForm" onsubmit="return checkForm()" action="about.html" >
+        
+            <div tabindex="1">
+                <label> <span>Login:</span>
+                    <input type="text" name="login" id="login" placeholder="username" required minlength="3">
+                </label>
+            </div>
+            <div>
+                <label for="email"><span>Email:</span></label>
+                <input type="email" name="email" id="email" placeholder="email@google.com" required>
+            </div>
+            <div>
+                <label for="password"><span>Password</span></label>
+                <input type="password" name="password" id="password" required minlength="8">
+            </div>
+            <div>
+                <label for="cpassword"><span> Confirm Password</span></label>
+                <input type="password" name="cpassword" id="cpassword" required minlength="8">
+            </div>
+            <div>
+                <label for="phone"><span>Phone:</span></label>
+                <input type="tel" name="phone" id="phone" placeholder="+38(xxx)-xxx-xx-xx" value="+38(067)-362-82-42">
+    
+            </div>
+            <fieldset class="register-optopns">
+                <legend>Options for registrations</legend>
+                <input type="checkbox" name="pidpiska1" id="pipdpiska1" checked><span>pidpiska1</span>
+                <input type="checkbox" name="pidpiska2" id="pipdpiska2"><span>pidpiska2</span>
+            </fieldset>
+    
+            <fieldset>
+                <legend>male/female</legend>
+                <input type="radio" name="gender" id="male" value="male" checked><span>male</span>
+                <input type="radio" name="gender" id="female" value="female"><span>female</span>
+            </fieldset>
+    
+            <fieldset class="country">
+                <legend>Country</legend>
+                <!-- <label for="country">Country:</label> -->
+                <select name="country" id="country" required>
+                    <option value="1">Ukraine</option>
+                    <option value="2">Italy</option>
+                    <option value="3">USA</option>
+                    <option value="4">France</option>
+                </select>
+            </fieldset>
+            <div>
+                <label for="userBirthday">Your birthday:</label>
+                <input type="date" name="birthday" id="userBirthday">
+            </div>
+            <fieldset>
+                <legend>Added your skills:</legend>
+                <textarea name="skills" id="skills" cols="30" rows="10" placeholder="Yuot skills...">
+    
+                </textarea>
+            </fieldset>
+            <div>
+                <input type="submit" value="Send">
+                <input type="reset" value="Reset">
+                <input type="button" value="Button" hidden>
+                <button>registrations</button>
+            </div>
+    
+    </form>
+    <script src="./formscript.js"></script>
+</body>
+</html>

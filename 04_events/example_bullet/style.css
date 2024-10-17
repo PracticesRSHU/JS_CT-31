@@ -1,0 +1,46 @@
+body
+{
+    margin: 0;
+}
+#game1{
+    margin: auto;
+    position: relative;
+    width: 640px;
+    height: 480px;
+    border: 1px solid black;
+    background-color: lightgray;
+    z-index: -1;
+}
+
+#weapon, #bullet, #aim{
+    position: absolute;
+}
+#weapon{
+    background-color: brown;
+    height: 40px;
+    width:80px;
+    top: 40px;
+    z-index: 11;
+}
+
+#bullet
+{
+    background-color: blue;
+    height: 15px;
+    width: 30px;
+    border-radius: 50%;
+    top: 50px;
+    left:0;
+    z-index: 1;
+}
+
+#aim{
+    background-color: red;
+    height: 40px;
+    width: 40px;
+    top:40px;
+    right: 20px;
+    border-radius: 50%;
+    z-index: 11;
+
+}

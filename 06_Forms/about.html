@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About User</title>
+</head>
+<body>
+    <h>Info user</h>
+    <script>
+
+        let cookies=document.cookie.split(";");
+        document.writeln(cookies);
+        for (let index = 0; index < cookies.length; index++) {
+            const cookie_user = cookies[index];
+            let key_value=cookie_user.split("=");
+            let key=key_value[0]; // login
+            let value=key_value[1]; //Tsshrol
+            document.writeln(key+" =>  "+value);
+        
+        }
+    </script>
+</body>
+</html>
